@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nW3-Vp-gnC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Inference-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YOLOv5_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zidane.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="JKh-Qt-9zk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2c1-2b-upe">
+                                <rect key="frame" x="212" y="802" width="182" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RFv-Vr-ETo">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="lay" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera.metering.multispot" catalog="system" title="Detect"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="detectBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAE-tU-jJn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okK-zx-6B1">
+                                <rect key="frame" x="20" y="802" width="182" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo.on.rectangle.fill" catalog="system" title="Photos"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="photosBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="imH-e1-KU9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2c1-2b-upe" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" constant="-25" id="2dU-Wn-1Yy"/>
+                            <constraint firstItem="2c1-2b-upe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="9cB-yM-v7m"/>
+                            <constraint firstItem="okK-zx-6B1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FET-RC-dDf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2c1-2b-upe" secondAttribute="trailing" constant="20" id="FmD-8Z-WJY"/>
+                            <constraint firstItem="JKh-Qt-9zk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jid-wy-LE8"/>
+                            <constraint firstItem="JKh-Qt-9zk" firstAttribute="bottom" secondItem="2c1-2b-upe" secondAttribute="top" constant="-20" id="Mmb-Lv-kae"/>
+                            <constraint firstItem="JKh-Qt-9zk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aZL-QM-Whd"/>
+                            <constraint firstItem="okK-zx-6B1" firstAttribute="bottom" secondItem="2c1-2b-upe" secondAttribute="bottom" id="cOf-kn-MXz"/>
+                            <constraint firstItem="JKh-Qt-9zk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dHN-tQ-LX8"/>
+                            <constraint firstItem="okK-zx-6B1" firstAttribute="trailing" secondItem="2c1-2b-upe" secondAttribute="leading" constant="-10" id="egU-Hw-XCs"/>
+                            <constraint firstItem="okK-zx-6B1" firstAttribute="top" secondItem="2c1-2b-upe" secondAttribute="top" id="vgj-fR-U6d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image Inference" id="Vs1-UX-uI0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="fQu-y1-zqZ">
+                            <connections>
+                                <segue destination="ow6-wr-LAG" kind="show" id="guO-zw-2FR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detectBtn" destination="2c1-2b-upe" id="Uok-TD-6cD"/>
+                        <outlet property="previewImgView" destination="JKh-Qt-9zk" id="aCV-kz-0bm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="EFV-hJ-xeu">
+            <objects>
+                <viewController id="ow6-wr-LAG" customClass="CameraViewController" customModule="YOLOv5_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kHi-6a-tq4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrH-9r-Ret">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PUv-Pc-dtF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PUv-Pc-dtF" firstAttribute="bottom" secondItem="XrH-9r-Ret" secondAttribute="bottom" id="IUw-eW-SVs"/>
+                            <constraint firstItem="XrH-9r-Ret" firstAttribute="top" secondItem="PUv-Pc-dtF" secondAttribute="top" id="N7s-Rd-o4J"/>
+                            <constraint firstItem="PUv-Pc-dtF" firstAttribute="trailing" secondItem="XrH-9r-Ret" secondAttribute="trailing" id="RfZ-hT-nGb"/>
+                            <constraint firstItem="XrH-9r-Ret" firstAttribute="leading" secondItem="PUv-Pc-dtF" secondAttribute="leading" id="wdV-wd-8DP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DNw-tq-IfV">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.triangle.2.circlepath.camera" catalog="system" id="Ro4-hz-hH4">
+                            <connections>
+                                <action selector="switchBtnAction:" destination="ow6-wr-LAG" id="yqA-z1-6ID"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="previewView" destination="XrH-9r-Ret" id="Jy4-St-rCB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1Z-Jj-fxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="115"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gx0-Q5-C9u">
+            <objects>
+                <navigationController id="nW3-Vp-gnC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNN-II-gju">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qeZ-DZ-8Zr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLY-AN-0AT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-728" y="115"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.triangle.2.circlepath.camera" catalog="system" width="128" height="94"/>
+        <image name="camera.metering.multispot" catalog="system" width="128" height="93"/>
+        <image name="photo.on.rectangle.fill" catalog="system" width="128" height="97"/>
+        <image name="zidane.jpeg" width="1280" height="720"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
